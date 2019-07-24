@@ -617,7 +617,7 @@ const stringOneRunWithOffset = `func (i %[1]s) String() string {
 		return "%[1]s(" + strconv.FormatInt(int64(i + %[2]s), 10) + ")"
 	}
 	foo := _%[1]s_name[_%[1]s_index[i] : _%[1]s_index[i+1]]
-	strings.Replace(foo, "_", " ", -1)
+	return strings.Replace(foo, "_", " ", -1)
 }
 `
 

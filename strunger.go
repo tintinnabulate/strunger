@@ -641,7 +641,8 @@ func (g *Generator) buildMultipleRuns(runs [][]Value, typeName string) {
 			typeName, i, typeName, i, typeName, i)
 	}
 	g.Printf("\tdefault:\n")
-	g.Printf("\t\treturn \"%s(\" + strconv.FormatInt(int64(i), 10) + \")\"\n", typeName)
+	g.Printf("\t\tfoo :=\"%s(\" + strconv.FormatInt(int64(i), 10) + \")\"\n", typeName)
+	g.Printf("\t\tstrings.Replace(foo, \"_\", \" \", -1)")
 	g.Printf("\t}\n")
 	g.Printf("}\n")
 }
